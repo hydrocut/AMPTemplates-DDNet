@@ -33,7 +33,7 @@
         "FieldName": "sv_motd",
         "InputType": "text",
         "ParamFieldName": "sv_motd",
-        "DefaultValue": "Bienvenue sur le serveur DDNet de TeamKit.fr !\\nTape /rules pour les regles et /help pour l'aide.",
+        "DefaultValue": "Bienvenue sur le serveur DDNet de TeamKit.fr !\\n\\n/rules   les règles du serveur\\n/r       te dégeler quand tu es bloqué\\n/info    version et infos du serveur\\n/help    toutes les commandes",
         "EnumValues": {}
     },
     {
@@ -45,7 +45,7 @@
         "FieldName": "sv_welcome",
         "InputType": "text",
         "ParamFieldName": "sv_welcome",
-        "DefaultValue": "Bienvenue ! Tape /rules pour les regles du serveur.",
+        "DefaultValue": "Bienvenue ! Tape /rules pour les règles du serveur.",
         "EnumValues": {}
     },
     {
@@ -217,38 +217,74 @@
         }
     },
     {
-        "DisplayName": "Regle maison 1",
+        "DisplayName": "Règle maison 1",
         "Category": "DDNet:sports_esports",
         "Subcategory": "DDrace:bolt:4",
-        "Description": "Ligne ajoutee a /rules, apres les regles DDRace. Une phrase courte.",
+        "Description": "Ligne ajoutée à /rules, après les règles DDRace. Une phrase courte. Le jeu en accepte dix au total ; laisse vides celles dont tu n'as pas besoin.",
         "Keywords": "regle,maison,ligne,sv_rules_line1",
         "FieldName": "sv_rules_line1",
         "InputType": "text",
         "ParamFieldName": "sv_rules_line1",
-        "DefaultValue": "",
+        "DefaultValue": "Serveur francophone : français ou anglais, et on reste correct.",
         "EnumValues": {}
     },
     {
-        "DisplayName": "Regle maison 2",
+        "DisplayName": "Règle maison 2",
         "Category": "DDNet:sports_esports",
         "Subcategory": "DDrace:bolt:4",
-        "Description": "Deuxieme ligne de regles maison.",
+        "Description": "Ligne 2 de tes règles maison. Laisse vide si tu n'en as pas besoin.",
         "Keywords": "regle,maison,ligne,sv_rules_line2",
         "FieldName": "sv_rules_line2",
         "InputType": "text",
         "ParamFieldName": "sv_rules_line2",
-        "DefaultValue": "",
+        "DefaultValue": "On s'entraide : personne ne reste gelé tout seul.",
         "EnumValues": {}
     },
     {
-        "DisplayName": "Regle maison 3",
+        "DisplayName": "Règle maison 3",
         "Category": "DDNet:sports_esports",
         "Subcategory": "DDrace:bolt:4",
-        "Description": "Troisieme ligne de regles maison.",
+        "Description": "Ligne 3 de tes règles maison. Laisse vide si tu n'en as pas besoin.",
         "Keywords": "regle,maison,ligne,sv_rules_line3",
         "FieldName": "sv_rules_line3",
         "InputType": "text",
         "ParamFieldName": "sv_rules_line3",
+        "DefaultValue": "Interdit de bloquer un joueur qui progresse.",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Règle maison 4",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Ligne 4 de tes règles maison. Laisse vide si tu n'en as pas besoin.",
+        "Keywords": "regle,maison,ligne,sv_rules_line4",
+        "FieldName": "sv_rules_line4",
+        "InputType": "text",
+        "ParamFieldName": "sv_rules_line4",
+        "DefaultValue": "Ni triche, ni bot, ni macro.",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Règle maison 5",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Ligne 5 de tes règles maison. Laisse vide si tu n'en as pas besoin.",
+        "Keywords": "regle,maison,ligne,sv_rules_line5",
+        "FieldName": "sv_rules_line5",
+        "InputType": "text",
+        "ParamFieldName": "sv_rules_line5",
+        "DefaultValue": "Bloqué ? Tape /r pour te dégeler.",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Règle maison 6",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Ligne 6 de tes règles maison. Laisse vide si tu n'en as pas besoin.",
+        "Keywords": "regle,maison,ligne,sv_rules_line6",
+        "FieldName": "sv_rules_line6",
+        "InputType": "text",
+        "ParamFieldName": "sv_rules_line6",
         "DefaultValue": "",
         "EnumValues": {}
     },
