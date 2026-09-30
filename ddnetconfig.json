@@ -100,15 +100,17 @@
         "DisplayName": "Annoncer le serveur publiquement",
         "Category": "DDNet:sports_esports",
         "Subcategory": "Serveur:dns:1",
-        "Description": "ATTENTION : le fichier d'exemple de DDNet met ce reglage a 0, donc un serveur monte a partir de leur exemple est INVISIBLE. Ici il est a 1 : le serveur apparait dans la liste que voient tous les joueurs DDNet.",
+        "Description": "Deux pieges en un. D'abord le fichier d'exemple de DDNet met ce reglage a 0, donc un serveur monte a partir de leur exemple est INVISIBLE. Ensuite ce n'est pas un simple oui/non : si la machine n'a pas de route IPv6 sortante, le serveur reessaie l'enregistrement IPv6 toutes les 15 secondes et noie son journal d'erreurs. Choisis IPv4 seulement tant que l'IPv6 n'est pas en place.",
         "Keywords": "annonce,public,liste,register,sv_register",
         "FieldName": "sv_register",
-        "InputType": "checkbox",
+        "InputType": "enum",
         "ParamFieldName": "sv_register",
-        "DefaultValue": "1",
+        "DefaultValue": "ipv4",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "ipv4": "Oui, en IPv4 seulement (recommande)",
+            "ipv4,ipv6": "Oui, IPv4 et IPv6",
+            "ipv6": "Oui, en IPv6 seulement",
+            "0": "Non, serveur invisible dans la liste"
         }
     },
     {

@@ -36,8 +36,38 @@ quel, le serveur a deux problèmes, et aucun ne se voit dans les logs :
 
 Le second est le plus vicieux : le serveur marche, il est visible, il est
 simplement rangé dans la mauvaise catégorie — celle où les joueurs vont
-tester des triches, pas celle où ils viennent jouer. Le template met `1` et
-`0` respectivement.
+tester des triches, pas celle où ils viennent jouer. Le template met
+`sv_test_cmds 0`, et `sv_register` sur **`ipv4`** plutôt que sur `1`.
+
+Pourquoi `ipv4` et pas `1` : `sv_register` n'est pas un booléen, il accepte une
+liste de familles d'adresses (« *can also accept a comma-separated list of
+protocols to register on, like 'ipv4,ipv6'* » — le binaire connaît
+`tw0.6/ipv4`, `tw0.6/ipv6`, `tw0.7/ipv4` et `tw0.7/ipv6`). Sur une machine
+sans route IPv6 sortante — le cas d'un conteneur Docker par défaut —
+l'enregistrement IPv6 échoue **toutes les 15 secondes, indéfiniment** :
+
+```
+E register/6/ipv6: error sending request to master
+```
+
+Le serveur est parfaitement listé en IPv4, mais son journal devient illisible.
+Et un journal illisible cache le vrai problème le jour où il arrive. On ne
+masque donc pas l'erreur, on supprime la cause.
+
+## Le panneau d'AMP affiche les joueurs
+
+Les motifs du bloc `Console.*` sont écrits d'après les **vraies lignes** du
+journal d'une instance qui tourne, pas d'après une supposition de format :
+
+| Ce qu'AMP apprend | Ligne lue |
+|---|---|
+| le serveur est prêt | `… I server: version 20.1.1 on linux amd64` |
+| un joueur arrive | `… I chat: *** 'Hydrocut' entered and joined the game` |
+| un joueur part | `… I chat: *** 'Hydrocut' has left the game` |
+| un message de chat | `… I chat: 0:-2:Hydrocut: salut` |
+
+Le format du chat vient d'une chaîne du binaire lui-même (`'%d:%d:%s: %s'`,
+soit identifiant:équipe:pseudo: message), pas d'une devinette.
 
 **Comment vérifier après le premier démarrage** : dans la liste des serveurs
 du jeu, la colonne du type doit afficher `DDraceNetwork`. Si elle affiche

@@ -146,6 +146,27 @@ doubles = [p for p, n in vus.items() if n > 1]
 if doubles:
     soucis.append('reglages en double : %s' % ', '.join(doubles))
 
+
+# ── 7. le .kvp est-il COMPLET ? ──────────────────────────────────────────────
+# L'oubli qui a coute le plus cher : j'avais recopie le bloc App.* du template
+# Teeworlds sans voir qu'il restait 23 cles derriere, dont tout Console.*.
+# Sans elles, AMP ne sait pas lire la console du serveur et n'affiche AUCUN
+# joueur — et rien, nulle part, ne signale que quelque chose manque.
+ATTENDUES = ['App.SupportsUniversalSleep', 'App.WakeupMode', 'App.ApplicationReadyMode', 'Console.FilterMatchRegex', 'Console.FilterMatchReplacement', 'Console.ThrowawayMessageRegex', 'Console.AppReadyRegex', 'Console.UserJoinRegex', 'Console.UserLeaveRegex', 'Console.UserChatRegex', 'Console.UpdateAvailableRegex', 'Console.PreConnectRegex', 'Console.ConnectIPRegex', 'Console.MetricsRegex', 'Console.HideFromConsoleRegex', 'Console.SuppressLogAtStart', 'Console.UserActions', 'Limits.SleepMode', 'Limits.SleepOnStart', 'Limits.SleepDelayMinutes', 'Limits.DozeDelay', 'Limits.AutoRetryCount', 'Limits.SleepStartThresholdSeconds']
+absentes = [c for c in ATTENDUES if (c + '=') not in kvp]
+if absentes:
+    soucis.append('cles absentes du .kvp (%d) : %s' % (len(absentes), ', '.join(absentes)))
+else:
+    print('ok   kvp complet          les %d cles Console/Limits sont la' % len(ATTENDUES))
+
+# Un mode RegexMatch sans motif, c'est une instance qui ne se declare jamais prete.
+import re as _re
+_m = _re.search(r'^App\.ApplicationReadyMode=(.+)$', kvp, _re.M)
+_r = _re.search(r'^Console\.AppReadyRegex=(.*)$', kvp, _re.M)
+if _m and _m.group(1).strip() == 'RegexMatch' and not (_r and _r.group(1).strip()):
+    soucis.append('ApplicationReadyMode=RegexMatch mais AppReadyRegex est vide')
+else:
+    print('ok   mode de demarrage    %s' % (_m.group(1).strip() if _m else '?'))
 # ── verdict ──────────────────────────────────────────────────────────────────
 print()
 if soucis:
