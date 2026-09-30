@@ -1,0 +1,9 @@
+# Ce dépôt ne contient que le template : les fichiers de DDNet sont
+# téléchargés depuis ddnet.org au moment de l'Update dans AMP.
+*.tar.xz
+*.tar.gz
+*.zip
+DDNet-Server
+DDNet
+data/
+__pycache__/

@@ -1,0 +1,340 @@
+[
+    {
+        "DisplayName": "Port du jeu",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "",
+        "Keywords": "",
+        "FieldName": "$GamePort",
+        "InputType": "number",
+        "Hidden": true,
+        "ParamFieldName": "sv_port",
+        "ExcludeFromImport": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Nom du serveur",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "Le nom dans la liste des serveurs. Commencer par FR aide les joueurs francophones a te trouver : la liste DDNet est mondiale et se trie par nom.",
+        "Keywords": "nom,name,serveur,sv_name",
+        "FieldName": "sv_name",
+        "InputType": "text",
+        "ParamFieldName": "sv_name",
+        "DefaultValue": "FR TeamKit - DDNet",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Message d'accueil (MOTD)",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "Panneau affiche a l'arrivee sur le serveur. Utilise \\n pour passer a la ligne. C'est l'endroit ou mettre le lien du Discord.",
+        "Keywords": "motd,accueil,message,sv_motd",
+        "FieldName": "sv_motd",
+        "InputType": "text",
+        "ParamFieldName": "sv_motd",
+        "DefaultValue": "Bienvenue sur le serveur DDNet de TeamKit.fr !\\nTape /rules pour les regles et /help pour l'aide.",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Message de bienvenue (chat)",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "Une seule ligne, envoyee dans le chat quand un joueur arrive. Plus discret que le MOTD, et plus souvent lu.",
+        "Keywords": "bienvenue,welcome,chat,sv_welcome",
+        "FieldName": "sv_welcome",
+        "InputType": "text",
+        "ParamFieldName": "sv_welcome",
+        "DefaultValue": "Bienvenue ! Tape /rules pour les regles du serveur.",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Mot de passe du serveur",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "Laisse vide pour un serveur ouvert. Attention : sur DDNet, un serveur avec mot de passe n'a aucun interet a etre annonce publiquement.",
+        "Keywords": "mot,passe,password",
+        "FieldName": "password",
+        "InputType": "Password",
+        "ParamFieldName": "password",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Mot de passe admin (rcon F2)",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "Tous les droits en jeu, touche F2. Laisse vide et DDNet en genere un au hasard qu'il affiche dans la console d'AMP au demarrage : pratique, mais il change a chaque redemarrage.",
+        "Keywords": "rcon,admin,mot,passe,sv_rcon_password",
+        "FieldName": "sv_rcon_password",
+        "InputType": "Password",
+        "ParamFieldName": "sv_rcon_password",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Mot de passe moderateur",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "Peut kicker, bannir et moderer, mais pas tout casser. C'est celui a donner au staff. La liste exacte de ses droits est dans autoexec_server.cfg.",
+        "Keywords": "moderateur,mod,mot,passe,sv_rcon_mod_password",
+        "FieldName": "sv_rcon_mod_password",
+        "InputType": "Password",
+        "ParamFieldName": "sv_rcon_mod_password",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Mot de passe assistant (helper)",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "Peut aider les joueurs coinces (tele, unfreeze, armes) sans pouvoir bannir. Le bon niveau pour un habitue serviable.",
+        "Keywords": "helper,assistant,mot,passe,sv_rcon_helper_password",
+        "FieldName": "sv_rcon_helper_password",
+        "InputType": "Password",
+        "ParamFieldName": "sv_rcon_helper_password",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Annoncer le serveur publiquement",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "ATTENTION : le fichier d'exemple de DDNet met ce reglage a 0, donc un serveur monte a partir de leur exemple est INVISIBLE. Ici il est a 1 : le serveur apparait dans la liste que voient tous les joueurs DDNet.",
+        "Keywords": "annonce,public,liste,register,sv_register",
+        "FieldName": "sv_register",
+        "InputType": "checkbox",
+        "ParamFieldName": "sv_register",
+        "DefaultValue": "1",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Carte de depart",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Partie:map:2",
+        "Description": "Les cartes livrees avec DDNet. Sunny Side Up est la carte novice classique ; Tutorial explique les bases et convient a une communaute qui decouvre. Pour d'autres cartes, depose les .map dans data/maps et utilise les votes de cartes en jeu.",
+        "Keywords": "carte,map,depart,sv_map",
+        "FieldName": "sv_map",
+        "InputType": "enum",
+        "ParamFieldName": "sv_map",
+        "DefaultValue": "Sunny Side Up",
+        "EnumValues": {
+            "Sunny Side Up": "Sunny Side Up - novice, la classique",
+            "Tutorial": "Tutorial - apprend les bases",
+            "LearnToPlay": "LearnToPlay - entrainement",
+            "Gold Mine": "Gold Mine - novice",
+            "Tsunami": "Tsunami - novice",
+            "coverage": "coverage - test",
+            "ctf1": "ctf1 - capture de drapeau (vanilla)",
+            "ctf2": "ctf2 - capture de drapeau (vanilla)",
+            "ctf3": "ctf3 - capture de drapeau (vanilla)",
+            "ctf4": "ctf4 - capture de drapeau (vanilla)",
+            "ctf5": "ctf5 - capture de drapeau (vanilla)",
+            "ctf6": "ctf6 - capture de drapeau (vanilla)",
+            "ctf7": "ctf7 - capture de drapeau (vanilla)",
+            "dm1": "dm1 - deathmatch (vanilla)",
+            "dm2": "dm2 - deathmatch (vanilla)",
+            "dm6": "dm6 - deathmatch (vanilla)",
+            "dm7": "dm7 - deathmatch (vanilla)",
+            "dm8": "dm8 - deathmatch (vanilla)",
+            "dm9": "dm9 - deathmatch (vanilla)"
+        }
+    },
+    {
+        "DisplayName": "Commandes de test (cheats)",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Partie:map:2",
+        "Description": "A LAISSER DESACTIVE. Ce reglage decide du TYPE de serveur affiche dans la liste : desactive, ton serveur est un DDraceNetwork ; active, il devient un TestDDraceNetwo, une autre categorie. Le fichier d'exemple de DDNet le met a 1 : c'est la premiere chose a corriger.",
+        "Keywords": "test,cheats,triche,type,sv_test_cmds",
+        "FieldName": "sv_test_cmds",
+        "InputType": "checkbox",
+        "ParamFieldName": "sv_test_cmds",
+        "DefaultValue": "0",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Mode tournoi",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Partie:map:2",
+        "Description": "Les joueurs arrivent en spectateur et doivent rejoindre la partie explicitement. Pour un evenement, pas pour tous les jours.",
+        "Keywords": "tournoi,tournament,spectateur,sv_tournament_mode",
+        "FieldName": "sv_tournament_mode",
+        "InputType": "checkbox",
+        "ParamFieldName": "sv_tournament_mode",
+        "DefaultValue": "0",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Joueurs maximum",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Joueurs:group:3",
+        "Description": "DDNet accepte beaucoup de monde parce que le jeu est cooperatif : personne ne gene personne. 64 est la valeur de reference.",
+        "Keywords": "joueurs,places,max,clients,sv_max_clients",
+        "FieldName": "sv_max_clients",
+        "InputType": "number",
+        "ParamFieldName": "sv_max_clients",
+        "DefaultValue": "64",
+        "Placeholder": "64",
+        "Suffix": "joueurs",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Joueurs par adresse IP",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Joueurs:group:3",
+        "Description": "Plusieurs connexions depuis la meme adresse. 4 permet a une famille ou une colocation de jouer ensemble tout en limitant les multi-comptes.",
+        "Keywords": "ip,adresse,multi,sv_max_clients_per_ip",
+        "FieldName": "sv_max_clients_per_ip",
+        "InputType": "number",
+        "ParamFieldName": "sv_max_clients_per_ip",
+        "DefaultValue": "4",
+        "Placeholder": "4",
+        "Suffix": "par IP",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Regles DDRace par defaut",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Affiche les regles standard de DDRace quand un joueur tape /rules. A laisser actif : elles sont connues de tous les joueurs DDNet.",
+        "Keywords": "regles,rules,ddrace,sv_ddrace_rules",
+        "FieldName": "sv_ddrace_rules",
+        "InputType": "checkbox",
+        "ParamFieldName": "sv_ddrace_rules",
+        "DefaultValue": "1",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Regle maison 1",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Ligne ajoutee a /rules, apres les regles DDRace. Une phrase courte.",
+        "Keywords": "regle,maison,ligne,sv_rules_line1",
+        "FieldName": "sv_rules_line1",
+        "InputType": "text",
+        "ParamFieldName": "sv_rules_line1",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Regle maison 2",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Deuxieme ligne de regles maison.",
+        "Keywords": "regle,maison,ligne,sv_rules_line2",
+        "FieldName": "sv_rules_line2",
+        "InputType": "text",
+        "ParamFieldName": "sv_rules_line2",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Regle maison 3",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Troisieme ligne de regles maison.",
+        "Keywords": "regle,maison,ligne,sv_rules_line3",
+        "FieldName": "sv_rules_line3",
+        "InputType": "text",
+        "ParamFieldName": "sv_rules_line3",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Commande /pause autorisee",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Permet a un joueur de mettre son personnage en pause et de le faire disparaitre (/spec). Desactive par defaut : sur une carte cooperative, un personnage qui disparait peut casser la progression du groupe.",
+        "Keywords": "pause,spec,sv_pauseable",
+        "FieldName": "sv_pauseable",
+        "InputType": "checkbox",
+        "ParamFieldName": "sv_pauseable",
+        "DefaultValue": "0",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Commande /rescue autorisee",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Permet de se teleporter hors du gel quand on est bloque. A LAISSER ACTIF sur un serveur pour debutants : sans ca, un joueur coince doit attendre qu'un autre vienne le liberer, et il part.",
+        "Keywords": "rescue,gel,freeze,bloque,sv_rescue",
+        "FieldName": "sv_rescue",
+        "InputType": "checkbox",
+        "ParamFieldName": "sv_rescue",
+        "DefaultValue": "1",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Delai entre deux /rescue",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Secondes d'attente entre deux sauvetages, pour que la commande reste un secours et pas un moyen de traverser la carte.",
+        "Keywords": "rescue,delai,secondes,sv_rescue_delay",
+        "FieldName": "sv_rescue_delay",
+        "InputType": "number",
+        "ParamFieldName": "sv_rescue_delay",
+        "DefaultValue": "5",
+        "Placeholder": "5",
+        "Suffix": "secondes",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Intervalle des annonces",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Minutes entre deux messages tires du fichier announcement.txt, a creer a la racine du serveur (une annonce par ligne).",
+        "Keywords": "annonces,intervalle,minutes,sv_announcement_interval",
+        "FieldName": "sv_announcement_interval",
+        "InputType": "number",
+        "ParamFieldName": "sv_announcement_interval",
+        "DefaultValue": "120",
+        "Placeholder": "120",
+        "Suffix": "minutes",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Annonces dans un ordre aleatoire",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "DDrace:bolt:4",
+        "Description": "Tire les annonces au hasard plutot que dans l'ordre du fichier.",
+        "Keywords": "annonces,hasard,aleatoire,sv_announcement_random",
+        "FieldName": "sv_announcement_random",
+        "InputType": "checkbox",
+        "ParamFieldName": "sv_announcement_random",
+        "DefaultValue": "1",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Fichier des classements",
+        "Category": "DDNet:sports_esports",
+        "Subcategory": "Classements:leaderboard:5",
+        "Description": "Les temps des joueurs sont enregistres dans ce fichier SQLite, cree tout seul au premier demarrage. C'est ce qui fait vivre un serveur DDNet : les joueurs reviennent pour battre leur temps. Il est dans les sauvegardes AMP.",
+        "Keywords": "classements,records,temps,sqlite,sv_sqlite_file",
+        "FieldName": "sv_sqlite_file",
+        "InputType": "text",
+        "ParamFieldName": "sv_sqlite_file",
+        "DefaultValue": "ddnet-server.sqlite",
+        "EnumValues": {}
+    }
+]

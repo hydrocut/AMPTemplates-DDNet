@@ -1,0 +1,9 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 8303,
+        "Ref": "GamePort",
+        "Name": "Port du jeu",
+        "Description": "Connexion des joueurs et annonce aux serveurs maitres de DDNet. Seul port a ouvrir. Les ports 8303 a 8310 sont les seuls qui apparaissent dans l'onglet LAN du jeu."
+    }
+]
